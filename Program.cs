@@ -16,6 +16,11 @@ namespace ClassExample
             {
                 Console.WriteLine("부모의 메서드");
             }
+            public virtual void Method()
+            {
+                Console.WriteLine("부모의 메서드");
+            }
+
             public void CountParent()
             {
                 Parent.counter++;
@@ -34,6 +39,12 @@ namespace ClassExample
             {
                 Console.WriteLine("자식의 메서드");
             }
+            public override void Method()
+            {
+                Console.WriteLine("자식의 메서드");
+            }
+
+
             public void CountChild()
             {
                 Child.counter++;
@@ -83,8 +94,24 @@ namespace ClassExample
             Console.WriteLine(((Parent)child3).variable);   // 숫자 variable 출력
 
             // 메서드 하이딩
-            child3.Method();    // 자식 메서드 출력
-            ((Parent)child3).Method();  // 부모 메서드 출력
+            //child3.Method();    // 자식 메서드 출력
+            //((Parent)child3).Method();  // 부모 메서드 출력
+
+            // 메서드 오버라이딩
+            //child3.Method();    // 자식 메서드 출력
+            //((Parent)child3).Method();  // 부모 메서드 출력
+
+            // 메서드 하이딩, 오버라이딩 비교 구현
+            List<Animal> Animals = new List<Animal>()
+            {
+                new Dog(), new Cat(), new Cat(), new Dog(),
+                new Dog(), new Cat(), new Cat(), new Dog()
+            };
+
+            foreach(var item in Animals)
+            {
+                item.Eat();
+            }
         }
     }
 }
