@@ -54,9 +54,8 @@ namespace ClassExample31
             Child childA = new Child("abc");
             Child childB = new Child(3L);
 
-            parent.CountParent();
-            child.CountChild();
-            
+            childA.CountParent();
+            childB.CountChild();
         }
     }
 }
