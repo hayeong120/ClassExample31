@@ -2,7 +2,7 @@
 
 namespace ClassExample
 {
-    public class Animal
+    public sealed class Animal
     {  
         public virtual void Eat()
         {
